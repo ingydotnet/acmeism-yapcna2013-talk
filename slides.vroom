@@ -1,0 +1,433 @@
+---- config
+title: Acmeism - Hacking in all Languages at Once
+indent: 5
+# auto_size: 1
+height: 18
+width: 70
+skip: 0
+
+---- center
+Acmeism - Hacking in all Languages at Once
+
+by Ingy döt Net
+
+OSDC.tw
+
+Tuesday, June 4, 2013
+
+----
+== Questions!!
+====
+I have some questions for *you*!
+
+- How many people have programmed in Perl?
+- How many people have written Perl modules?
+- How many people have published Perl distributions on CPAN?
+
+- How many people have programmed in Perl6?
+- How many people have written Perl6 modules?
+- How many people have published Perl6 distributions on CPAN?
+
+- How many people have programmed in JavaScript?
+- How many people have programmed in Node.js?
+- How many people have written JS modules?
+- How many people have published JS packages on NPM?
+
+- How many people have programmed in Ruby?
+- How many people have written Ruby classes/modules?
+- How many people have published Ruby gems on RubyGems?
+
+- How many people have programmed in Python?
+- How many people have written Python modules?
+- How many people have published Python packages on PyPI?
+
+- How many people have programmed in all 5 languages?
+- How many people have written modules in all 5 languages?
+- How many people have published packages in all 5 languages?
+- How many people have published the same package to all 4 package sites?
+- How many people have published the same package to all 4 package sites from one source repository with one single command?
+
+----
+== I ♥ Modules
+
+* Modules == Packages/Dists/Gems
+
++* Ideas in a Box
+* Gifts for your Friends
+
++* Acmeists Give More Gifts!
+
+== Perl5------------CPAN
+== Perl6------------CPAN!!!
+== Ruby---------RubyGems
+== Node.js-----------NPM
+== Python-----------PyPI
+
+----
+== What's in the Box?
+
+  A Package is a Programming Idea…
+
+  Wrapped up and Ready to Gift!
+
+    Code            lib/*/*
+    Tests           test/*
+    Doc             doc/*
+    Information     *.{json,yaml}
+    Automation      {M,R,C,Sl}akefile
+
+All language's packages have these in the box.
+
+----
+== A Quick Packaging Vocabulary Lesson
+
+    package         distribution, gem
+    library         module, file
+
+    class           package
+    module          role, mixin
+
+----
+== Perl5 Package (cpan.org)
+
+    lib/
+    bin/
+    t/
+    META.yml
+    Makefile.PL / dist.ini
+
+    Changes
+
++Also:
+    LICENSE
+    README
+    .gitignore
+    MANIFEST
+
+----
+== Perl6 Package (perl6.org, GitHub, CPAN)
+
+    lib/
+    bin/
+    t/
+    ext/            # external (submodules)
+    META.info
+    bootstrap.pl
+
+----
+== Node.js (CoffeeScript) (npmjs.org)
+
+    lib/
+    src/
+    bin/
+    test/
+    doc/
+    package.json
+    Cakefile
+
+----
+== Ruby Package (rubygems.org)
+
+    lib/
+    bin/
+    test/
+    doc/
+    <name>.gemspec
+    Rakefile
+
+----
+== Python Package (pypi.org)
+
+    <name>/
+    scripts/
+    tests/
+    doc/
+    setup.py
+
+---- Acmeist Package Layout (<name>-acme on GitHub)
+
+    lib/            (CafeScript, UniScript, C'Dent)
+    bin/
+    test/
+    doc/            (.kwim, StarDoc
+    package.yaml
+    Makefile
+
+    ext/testml/     (testml repo)
+    ext/pegex/      (pegex repo)
+
+    readme.kwim
+    changelog.yaml
+
+----
+== What's in the *Acmeist* Box?
+
+    Code        C'Dent / UniScript / CafeScript
+    Tests       TestML
+    Doc         StarDoc / Kwim
+    Automation  pkg / package.yaml
+
+These are my Current Acmeist Projects. Also:
+
+    Pegex       Acmeist Parser Generator
+
+---- Acmeist Automation
+
+* Inspired/Validated by CoffeeScript and Dist::Zilla
+
+  Demo: ../testml-acme
+
+   > pkg update Makefile
+   > make node perl6 python
+   > make all
+   > make test
+   > make release
+
+----
+== What is the Acmeism?
+
+    Acmeists share good ideas across borders
+
++    http://www.oscon.com/oscon2013/public/schedule/detail/28496
+
++* Language separates cultures
+* The separation seems formidable
+* The barriers are mostly bullshit
+* Needs and solutions are the same (abstractly)
+* Modules (Ideas) should be available everywhere
+* Perl5 and Perl6 (and everyone else too!)
+* We can learn much from other cultures
+  * Even dead cultures
+  * RosettaCodeDataProject (Code/Lang/Talk)
+
+        Think! Hack! Overcome!
+
+----
+== Acmeism - The Hacker's Religion
+
+The standard hacker's timeline:
+
++1) Learn a Language
++2) Write some code
++3) Get a programming job
++4) Write an Open Source module/framework
++5) Give a talk at OSDC
+
++6) Start your own Religion :-)
+
+----
+== DocOpt
+
+    DocOpt is Acmeist (but probably doesn't know it!)
+
+    See: http://docopt.org/
+
+----
+== Introducing JSONY
+
+    plugin Server {
+      host example.com
+      port 8080
+    }
+    plugin Frobnicator {
+      harder true
+    }
+
+----
+== JSONY == JSON (…with a Little YAML)
+
+    [
+    "plugin", "Server", {
+      "host": "example.com",
+      "port": 8080
+    },
+    "plugin", "Frobnicator", {
+      "harder": true
+    }
+    ]
+
+----
+== JSONY
+
+* A superset of JSON (JSON is a subset)
+* Drop most syntaxy things
+* Add a few YAMLy things
+
+----
+== Whence JSONY?
+
+* My friend mst didn't like JSON or YAML
+* So we made up JSONY
+* And implemented it in one day
+
++* In 25 languages!
+* Same code!
+* Same tests!
+* Same API!
+
++* Then I woke up :\  (dream of the future)
+
+----
+== Introducing Pegex
+
+* Pegex == PEG + Regex
+* Pegex is Perl6 Rules for Every Language
+  (That supports regexes)
+* Pegex can define new syntaxes very easily
+  for many languages at once (like JSONY)
+* Pegex is written in Pegex and TestML!
+  * ../pegex-pgx
+  * ../pegex-tml
+
+  perl -MPegex -MIO::All -MXXX -e 'XXX pegex(io("pegex.pgx")->all)->parse(io("pegex.pgx")->all)'
+
+----
+== Introducing TestML
+
+* Acmeist, Data Driven Test Language
+* One Test Suite for every implementation
+* TestML is written in Pegex and TestML!
+  * ../testml-pgx
+  * ../testml-tml
+
+  cd testml-pm; prove -lvr t
+  cd testml-rb; rake test
+
+----
+== Why JSON, YAML and TOML Suck
+
+* Specification + Implementations * 25 == FAIL
+* Test Specs is better
+* APIs and implementations vary wildly
+* Docs are all over the map
+* Common bugs need 25 fixes
+
+----
+== The JSONY Implementation
+
+* ../jsony-tml
+* ../jsony-pgx
+* ../jsony-rb
+* ../jsony-pm
+
+  Soon: jsony-acme
+
+----
+== C'Dent - The Common Denominator Language
+
+* C'Dent is a *Model* programming language
+* No syntax
+* A C'Dent program is an object containing info
+  to generate 25 equivalent libraries
+* Class-based OO
+* Coded as foo.cd.yaml
+* Or foo.uni, or foo.cafe, or …
+* Statically typed
+
++* Named after my friend Chris Dent
+
+----
+== Things I learned from CoffeeScript
+
+* Coffee not only is a better syntax…
+* It actually *Adds* features to JS
+
+Show:
+
+    http://coffeescript.org/
+
+    http://livescript.net/
+
+    http://www.typescriptlang.org/
+----
+== UniScript
+
+* UniScript is human friendly C'Dent syntax
+
+    :!vim -O code/testml/testml.{uni,coffee,rb,pm,py}
+
+----
+== CafeScript
+
+* A Cafe(Script) is Coffee(Script) for Everyone
+* Another C'Dent syntax
+
+----
+== Stardoc
+
+* The C'Dent of Documentation
+* Write in your favorite syntax
+* Publish everywhere
+* Coming (not so) soon…
+
++* Code examples will be HARD
+
+----
+== So What?
+
+Audrey Tang once said:
+
+    Haskell makes writing parser/compilers
+    as easy as Perl makes writing CGI programs.
++
+Ingy now Says:
+
+    Acmeism makes writing multi-language DSLs
+    as easy as Haskell makes parser/compilers!
+
+----
+== The Pegex Challenge
+
+== *** Make Pegex Grammars for 100 common syntaxes. ***
+
+I am looking at every grammar I can find and trying to make it better (in every
+way) in Pegex:
+
+1) Simpler / Easier to Comprehend
+2) Runnable in many environments
+3) Faster to Run
+4) Extendable / Repursposable
+
+----
+== So What?
+
+* Now the next $cool_new_dsl can be implemented:
+  * In one day
+  * Same code
+  * Same tests
+  * Same API
+  * Same doc
+  * Same bugs
+  * Same fixes
+
++* World Peace Just Happens!
+
+----
+== Future Plans
+
+* C'Dent => .pm.pm6.rb.js.py
+  * Pegex
+  * TestML
+  * JSONY
+* Go support
+* Shared Library Binding
+  * C (C++11)
+  * LLVM
+  * ES6 - JavaScript
+* Source Mapping
+
+----
+== Care to Join Me?
+
+Drop by irc.freenode.net:
+
+    #acmeism
+    #testml
+    #pegex
+    #cdent
+    #uniscript
+    #cafescript
+----
+== The End
+
+== Questions?

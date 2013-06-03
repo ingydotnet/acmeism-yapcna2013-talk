@@ -1,0 +1,35 @@
+§ TestML
+  Δ 0.0.2
+
+  ↔runtime: ∅
+  ↔compiler: ∅
+  ↔bridge: ∅
+  ↔library: ∅
+  ↔testml: ∅
+
+  λ run …
+    set_default_classes
+    ∍runtime(
+      compiler: ∍compiler
+      bridge: ∍bridge
+      library: ∍library
+      testml: ∍testml
+    ).run(…)
+
+  λ set_default_classes
+    ¿ ⌐ ∍runtime
+      ✓ TestML·Runtime
+      ∍runtime = TestML·Runtime
+    ¿ ⌐ ∍compiler
+      ✓ TestML·Compiler
+      ∍compiler = TestML·Compiler
+    ¿ ⌐ ∍bridge
+      ✓ TestML·Bridge
+      ∍bridge = TestML·Bridge
+    ¿ ⌐ ∍library
+      ✓ TestML·Library·Standard
+      ✓ TestML·Library·Debug
+      ∍bridge = ｢
+        TestML·Library·Standard
+        TestML·Library·Debug
+      ｣
