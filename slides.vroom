@@ -1,9 +1,9 @@
 ---- config
 title: Acmeism - Hacking in all Languages at Once
 indent: 5
-# auto_size: 1
-height: 18
-width: 70
+auto_size: 1
+#height: 18
+#width: 70
 skip: 0
 
 ---- center
@@ -11,10 +11,15 @@ Acmeism - Hacking in all Languages at Once
 
 by Ingy döt Net
 
-OSDC.tw
+YAPC::NA - Austin TX
 
 Tuesday, June 4, 2013
+----
+== Buckle Up!
 
+== The Acmeism Rollercoaster Ride
+
+== is About to Begin!
 ----
 == Questions!!
 ====
@@ -58,7 +63,7 @@ I have some questions for *you*!
 +* Acmeists Give More Gifts!
 
 == Perl5------------CPAN
-== Perl6------------CPAN!!!
+== Perl6--(w00t!!)--CPAN
 == Ruby---------RubyGems
 == Node.js-----------NPM
 == Python-----------PyPI
@@ -71,8 +76,9 @@ I have some questions for *you*!
   Wrapped up and Ready to Gift!
 
     Code            lib/*/*
+                    bin/*
     Tests           test/*
-    Doc             doc/*
+    Documentation   doc/*
     Information     *.{json,yaml}
     Automation      {M,R,C,Sl}akefile
 
@@ -81,7 +87,7 @@ All language's packages have these in the box.
 ----
 == A Quick Packaging Vocabulary Lesson
 
-    package         distribution, gem
+    package         dist(ribution), gem
     library         module, file
 
     class           package
@@ -144,12 +150,13 @@ All language's packages have these in the box.
     doc/
     setup.py
 
----- Acmeist Package Layout (<name>-acme on GitHub)
+----
+== Acmeist Package Layout (<name>-acme on GitHub)
 
     lib/            (CafeScript, UniScript, C'Dent)
     bin/
     test/
-    doc/            (.kwim, StarDoc
+    doc/            (.kwim, StarDoc)
     package.yaml
     Makefile
 
@@ -171,6 +178,19 @@ These are my Current Acmeist Projects. Also:
 
     Pegex       Acmeist Parser Generator
 
+----
+== Dist::Zilla is Inspirational
+
+* Separate coding env and dist/package env
+* Package env is generated from hacking env
+* Make hacking comfortable
+* Use Pod::Weaver et al
+* Make packaging standard
+
++    Brilliant! == rjbs
+
++ Module::{Install,Package} MUST DIE :)
+
 ---- Acmeist Automation
 
 * Inspired/Validated by CoffeeScript and Dist::Zilla
@@ -184,7 +204,7 @@ These are my Current Acmeist Projects. Also:
    > make release
 
 ----
-== What is the Acmeism?
+== What(TF) is Acmeism?
 
     Acmeists share good ideas across borders
 
@@ -203,6 +223,19 @@ These are my Current Acmeist Projects. Also:
         Think! Hack! Overcome!
 
 ----
+== Acmeism vs Polyglot
+
+A Polyglot simply speaks multiple languages
+Most modern programmers are already Polyglots
+
++An Acmeist is an Inventor / Author / Crafts*man
+Acmeists take their creations to many cultures
+
++Acmeists are a *very* rare breed :(
+Acmeism is hard right now…
+But bootstrapping is always the hardest part.
+
+----
 == Acmeism - The Hacker's Religion
 
 The standard hacker's timeline:
@@ -211,9 +244,11 @@ The standard hacker's timeline:
 +2) Write some code
 +3) Get a programming job
 +4) Write an Open Source module/framework
-+5) Give a talk at OSDC
++5) Give a talk at YAPC
 
 +6) Start your own Religion :-)
+
++RosettaCode may be the Acmeist Scripture!
 
 ----
 == DocOpt
@@ -252,11 +287,18 @@ The standard hacker's timeline:
 * A superset of JSON (JSON is a subset)
 * Drop most syntaxy things
 * Add a few YAMLy things
+* On CPAN (and RubyGems) Now!!
+
++* Rant… New KoolKidsLingos™ show that:
+
+* {} , () ; have well accepeted meanings
+* They should always be supported
+* And almost always be optional/omitted
 
 ----
 == Whence JSONY?
 
-* My friend mst didn't like JSON or YAML
+* mst didn't like JSON or YAML
 * So we made up JSONY
 * And implemented it in one day
 
@@ -282,11 +324,32 @@ The standard hacker's timeline:
   perl -MPegex -MIO::All -MXXX -e 'XXX pegex(io("pegex.pgx")->all)->parse(io("pegex.pgx")->all)'
 
 ----
+== The Pegex Challenge
+
+== *** Make Pegex Grammars for 100 common syntaxes. ***
+
+    CoffeeScript, LiveScript, Markdown, POD, XML, YAML,
+    JSON, C++, JavaScript, Perl5/6, Python, Ruby…
+
+I am looking at every parser/grammar I can find…
+
+Trying to make it better (in every way) in Pegex:
+
+1) Simpler / Easier to Comprehend
+2) Runnable in many environments
+3) Faster
+4) Better error reporting
+5) Subclassable / Extendable
+6) Interoperable / Repurposable
+
+----
 == Introducing TestML
 
 * Acmeist, Data Driven Test Language
 * One Test Suite for every implementation
+* Born from Perl5's Test::Base
 * TestML is written in Pegex and TestML!
+  * ../jsony-tml
   * ../testml-pgx
   * ../testml-tml
 
@@ -316,13 +379,14 @@ The standard hacker's timeline:
 == C'Dent - The Common Denominator Language
 
 * C'Dent is a *Model* programming language
-* No syntax
+* No syntax… Just AST
 * A C'Dent program is an object containing info
   to generate 25 equivalent libraries
-* Class-based OO
+* Currently targeting class-based OO libraries
 * Coded as foo.cd.yaml
 * Or foo.uni, or foo.cafe, or …
 * Statically typed
+* Hope for C++ backend
 
 +* Named after my friend Chris Dent
 
@@ -339,6 +403,32 @@ Show:
     http://livescript.net/
 
     http://www.typescriptlang.org/
+----
+    // JavaScript                   # LiveScript
+    var foozle = function(a, b) {   foo = (a, b) ->
+        var c;
+        if (a == b) {                 if a == b
+            print("OK");                print "OK"
+            c = [1, 2, 3];              c = [1 2 3]
+        }
+        else {                        else
+            c = {                       c =
+                "a": 1,                   a: 1
+                "b": 2                    b: 2
+            };
+        }
+        return c;
+    }
+----
+    # LiveScript
+    foo = (a, b) ->
+    if a == b
+      print "OK"
+      c = [1 2 3]
+    else
+      c =
+        a: 1
+        b: 2
 ----
 == UniScript
 
@@ -357,13 +447,15 @@ Show:
 
 * The C'Dent of Documentation
 * Write in your favorite syntax
+  * Kwim, Markdown, ReST, POD
+* Pod::Weaver++
 * Publish everywhere
 * Coming (not so) soon…
 
-+* Code examples will be HARD
++* Code examples will be HARD  8-[
 
 ----
-== So What?
+== OK… So What?
 
 Audrey Tang once said:
 
@@ -376,20 +468,7 @@ Ingy now Says:
     as easy as Haskell makes parser/compilers!
 
 ----
-== The Pegex Challenge
-
-== *** Make Pegex Grammars for 100 common syntaxes. ***
-
-I am looking at every grammar I can find and trying to make it better (in every
-way) in Pegex:
-
-1) Simpler / Easier to Comprehend
-2) Runnable in many environments
-3) Faster to Run
-4) Extendable / Repursposable
-
-----
-== So What?
+== OK… So What?
 
 * Now the next $cool_new_dsl can be implemented:
   * In one day
@@ -405,10 +484,11 @@ way) in Pegex:
 ----
 == Future Plans
 
-* C'Dent => .pm.pm6.rb.js.py
-  * Pegex
-  * TestML
-  * JSONY
+* By OSCON:
+  * C'Dent => .pm.pm6.rb.js.py
+    * Pegex
+    * TestML
+    * JSONY
 * Go support
 * Shared Library Binding
   * C (C++11)
@@ -428,7 +508,7 @@ Drop by irc.freenode.net:
     #uniscript
     #cafescript
 
-Acmeism BoF
+Acmeism BoF (maybe tonight?)
 
 ----
 == The End
